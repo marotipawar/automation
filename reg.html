@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+            margin: 2rem;
+            font-size: 1.5rem;
+            color: #666;
+        }
+        .btn1{
+             flex: auto;
+            justify-items: center;
+            background-color: cadetblue;
+            padding: .5rem;
+            margin-top: 2rem;
+            color: #fff;
+            font-size: 1.4rem;
+            border: none;
+            box-shadow: 2px 6px 8px rgba(0, 0, 0, .4);
+        }
+        label{
+            display: block;
+           
+            padding: .5rem;
+            color: #777;
+        }
+        input{
+            display: block;
+            height: 2rem;
+            font-size: 1.4rem;
+        }
+        #frm{
+            visibility:visible;
+        }
+        #result{
+            visibility: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        p{
+            display: inline;
+            font-size: 1.5rem;
+            padding: .2rem;
+        }
+        span{
+            display: inline;
+            font-size: 1.5rem;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="result">
+        <p>Name :<p><p id="fn"></p>
+        <p id="ln"></p> 
+    </div>
+    <form id="frm">
+        <label>First Name</label>
+        <input type="text" name="firstName" id="fname">
+        <label>Last Name</label>
+        <input type="text" name="lastName" id="lname">
+        <button class="btn1" id="btn">Submit</button>
+    </form>
+  
+</body>
+<script>
+   document.getElementById('btn').addEventListener("click",(eve)=>{
+    eve.preventDefault();
+    const fname=document.getElementById('fname').value;
+    const lname=document.getElementById('lname').value;
+   
+   if (confirm("First Name :"+fname+"\nLast Name:"+lname)) {
+    document.getElementById('fn').innerHTML=fname;
+    document.getElementById('ln').innerHTML=lname;
+    const frm=document.getElementById('frm');
+    const res=document.getElementById('result');
+res.style.visibility="visible";
+frm.style.visibility="hidden";
+      return false;
+   }
+});
+</script>
+</html>

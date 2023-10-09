@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        html{
+            box-sizing: border-box;
+            font-size: 65.5%;
+            background-color: #eee;
+        }
+        .section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 5rem;
+            margin-left: 5rem;
+            
+
+        }
+        #btn{
+           position: relative;
+           left: 46%;
+            justify-items: center;
+            background-color: cadetblue;
+            padding: 1rem 3rem ;
+            margin-top: 2rem;
+            color: #fff;
+            font-size: 1.4rem;
+            border: none;
+            box-shadow: 2px 6px 8px rgba(0, 0, 0, .4);
+        }
+        #frame {
+            display: flex;
+            justify-content: center;
+            margin: 0rem 4rem;
+            visibility:hidden;
+            }
+            iframe{
+                border-style: none;
+            }
+            footer{
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                color: #444;
+            }
+    </style>
+</head>
+<body>
+   
+    <button id="btn">Click me</button>
+    <div class="section"></div>
+    <div id="frame">
+        <iframe srcdoc="https://marotipawar.github.io/automation/reg.html" height="500" width="600" id="form-1"></iframe>
+    </div>
+   </div>
+   <footer>
+    <div>
+        <h4>Designed & Developed by : Maroti Pawar &copy;2023</h4>
+    </div>
+   </footer>
+</body>
+<script>
+    document.getElementById("btn").addEventListener("click",toggleVis);
+    function toggleVis(){
+      frm = document.getElementById("frame");
+      if(frm.style.visibility != "visible"){
+        frm.style.visibility = "visible";
+      }
+      else{
+        frm.style.visibility = "hidden";
+      }
+    }
+   
+    </script>
+</html>
